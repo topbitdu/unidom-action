@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Unidom Action</title>
+  <%= stylesheet_link_tag 'unidom/action/application', media: 'all' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+<%= javascript_include_tag 'unidom/action/application' %>
+
+</body>
+</html>
