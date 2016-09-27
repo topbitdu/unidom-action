@@ -22,6 +22,10 @@ The migration versions start with 200005.
 
 ## Call the Model
 ```ruby
-Unidom::Action::Reason.create! activity_code: 'SRRR', name: 'broken', description: 'The box was broken.'
+reason = Unidom::Action::Reason.create! activity_code: 'SRRR', name: 'broken', description: 'The box was broken.'
 # SRRR = Shipment Receipt Rejection Reason
+
+person = Unidom::Party::Person.create! name: 'Tim'
+
+transition = Unidom::Action::StateTransition.create! reason: reason, subject: person, from_state: 'C', thru_state: 'R'
 ```

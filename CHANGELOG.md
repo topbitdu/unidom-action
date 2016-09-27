@@ -2,3 +2,4 @@
 
 ## v0.1
 1. Reason model & migration
+2. State Transition model & migration
