@@ -4,9 +4,13 @@ class CreateUnidomStateTransitions < ActiveRecord::Migration
 
     create_table :unidom_state_transitions, id: :uuid do |t|
 
-      t.references :subject, type: :uuid, null: false,
+      t.references :transitor_visitor, type: :uuid, null: false,
         polymorphic: { null: false, default: '', limit: 200 }
-      t.references :reason,  type: :uuid, null: true
+      t.references :transitor_party,   type: :uuid, null: false,
+        polymorphic: { null: false, default: '', limit: 200 }
+      t.references :subject,           type: :uuid, null: false,
+        polymorphic: { null: false, default: '', limit: 200 }
+      t.references :reason,            type: :uuid, null: true
 
       t.column :from_state, 'char(1)', null: false, default: 'C'
       t.column :thru_state, 'char(1)', null: false, default: 'C'
@@ -21,6 +25,8 @@ class CreateUnidomStateTransitions < ActiveRecord::Migration
 
     end
 
+    add_index :unidom_state_transitions, :transitor_visitor_id
+    add_index :unidom_state_transitions, :transitor_party_id
     add_index :unidom_state_transitions, :subject_id
     add_index :unidom_state_transitions, :reason_id
 

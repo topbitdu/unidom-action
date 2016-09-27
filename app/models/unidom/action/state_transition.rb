@@ -8,7 +8,9 @@ class Unidom::Action::StateTransition < Unidom::Action::ApplicationRecord
 
   include Unidom::Common::Concerns::ModelExtension
 
-  belongs_to :subject, polymorphic: true
-  belongs_to :reason,  class_name:  'Unidom::Action::Reason'
+  belongs_to :transitor_visitor, polymorphic: true
+  belongs_to :transitor_party,   polymorphic: true
+  belongs_to :subject,           polymorphic: true
+  belongs_to :reason,            class_name:  'Unidom::Action::Reason'
 
 end
