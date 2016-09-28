@@ -26,7 +26,10 @@ The migration versions start with 200005.
 reason = Unidom::Action::Reason.create! activity_code: 'SRRR', name: 'broken', description: 'The box was broken.'
 # SRRR = Shipment Receipt Rejection Reason
 
+user   = Unidom::Visitor::User.create!
 person = Unidom::Party::Person.create! name: 'Tim'
 
-transition = Unidom::Action::StateTransition.create! reason: reason, subject: person, from_state: 'C', thru_state: 'R'
+transition = Unidom::Action::StateTransition.create! transitor_visitor: user, transitor_party: person, reason: reason, subject: person, from_state: 'C', thru_state: 'R'
+obsolescence = Unidom::Action::Obsolescence.create! obsolescer_visitor: user, obsolescer_party: person, reason: reason, obsolesced: person
+# The reason could be nil.
 ```
