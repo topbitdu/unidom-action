@@ -1,8 +1,8 @@
-class CreateUnidomObsolescences < ActiveRecord::Migration
+class CreateUnidomObsolescings < ActiveRecord::Migration
 
   def change
 
-    create_table :unidom_obsolescences, id: :uuid do |t|
+    create_table :unidom_obsolescings, id: :uuid do |t|
 
       t.references :obsolescer_visitor, type: :uuid, null: false,
         polymorphic: { null: false, default: '', limit: 200 }
@@ -11,6 +11,8 @@ class CreateUnidomObsolescences < ActiveRecord::Migration
       t.references :obsolesced,         type: :uuid, null: false,
         polymorphic: { null: false, default: '', limit: 200 }
       t.references :reason,             type: :uuid, null: true
+
+      t.column :obsolescence_code, 'char(4)', null: false, default: 'OBSL'
 
       t.column   :state, 'char(1)', null: false, default: 'C'
       t.datetime :opened_at,        null: false, default: Time.utc(1970)
@@ -22,10 +24,10 @@ class CreateUnidomObsolescences < ActiveRecord::Migration
 
     end
 
-    add_index :unidom_obsolescences, :obsolescer_visitor_id
-    add_index :unidom_obsolescences, :obsolescer_party_id
-    add_index :unidom_obsolescences, :obsolesced_id
-    add_index :unidom_obsolescences, :reason_id
+    add_index :unidom_obsolescings, :obsolescer_visitor_id
+    add_index :unidom_obsolescings, :obsolescer_party_id
+    add_index :unidom_obsolescings, :obsolesced_id
+    add_index :unidom_obsolescings, :reason_id
 
   end
 
