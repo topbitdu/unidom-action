@@ -27,9 +27,18 @@ reason = Unidom::Action::Reason.create! activity_code: 'SRRR', name: 'broken', d
 # SRRR = Shipment Receipt Rejection Reason
 
 user   = Unidom::Visitor::User.create!
-person = Unidom::Party::Person.create! name: 'Tim'
 
+# Create/Update/Delete the person
+person = Unidom::Party::Person.create! name: 'Tim'
+acting = Unidom::Action::Acting.create! actor_visitor: user, actor_party: person, reason: reason, acted: person, from_value: {}, thru_value: { name: 'Time' }
+
+# Update the state of the person
+person.state = 'R'
+person.save!
 transition = Unidom::Action::StateTransition.create! transitor_visitor: user, transitor_party: person, reason: reason, subject: person, from_state: 'C', thru_state: 'R'
+
+# Soft destroy the person
+person.soft_destroy
 obsolescence = Unidom::Action::Obsolescence.create! obsolescer_visitor: user, obsolescer_party: person, reason: reason, obsolesced: person
 # The reason could be nil.
 ```
