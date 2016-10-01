@@ -43,3 +43,12 @@ person.soft_destroy
 obsolescence = Unidom::Action::Obsolescence.create! obsolescer_visitor: user, obsolescer_party: person, reason: reason, obsolesced: person
 # The reason could be nil.
 ```
+
+## Include the Concern
+```ruby
+include Unidom::Action::Concerns::AsStateSubject
+```
+
+### As State Subject concern
+The As State Subject concern do the following tasks for the includer automatically:  
+1. Define the has_many :state_transitions macro as: ``has_many :state_transitions, class_name: 'Unidom::Action::StateTransition', as: :subject``  
