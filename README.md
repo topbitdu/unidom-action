@@ -61,8 +61,20 @@ obsolescence = Unidom::Action::Obsolescence.create! obsolescer_visitor: user, ob
 ## Include the Concern
 
 ```ruby
+include Unidom::Action::Concerns::AsActed
+include Unidom::Action::Concerns::AsObsolesced
 include Unidom::Action::Concerns::AsStateSubject
 ```
+
+### As Acted concern
+
+The As Acted concern do the following tasks for the includer automatically:  
+1. Define the has_many :actings macro as: ``has_many :actings, class_name: 'Unidom::Action::Acting', as: :acted``  
+
+### As Obsolesced concern
+
+The As Obsolesced concern do the following tasks for the includer automatically:  
+1. Define the has_many :obsolescings macro as: ``has_many :obsolescings, class_name: 'Unidom::Action::Obsolescing', as: :obsolesced``  
 
 ### As State Subject concern
 

@@ -15,3 +15,7 @@
 1. As State Subject concern
 2. Rename the Obsolescence model to the Obsolescing model
 3. Improve the Obsolescing model to add the #obsolescence_code
+
+## v0.5
+1. As Obsolesced concern
+2. As Acted concern
