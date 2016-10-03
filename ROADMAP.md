@@ -19,3 +19,42 @@
 ## v0.5
 1. As Obsolesced concern
 2. As Acted concern
+
+## v0.6
+1. As State Transitor Party concern
+2. As Obsolescer Party concern
+
+## v0.7
+1. As State Transitor Visitor concern
+2. As Obsolescer Visitor concern
+
+## v0.8
+1. As Actor Party concern
+2. As Actor Visitor concern
+
+## v1.0
+1. Improve the State Transition model to add the .transit! method
+2. Improve the Obsolescing model to add the .obsolesce! method
+
+## v1.1
+1. Improve the State Subject concern to add the #is_transited! method
+2. Improve the Obsolesced concern to add the #is_obsolesced! method
+
+## v1.2
+1. Improve the State Subject concern to add the #is_transited? method
+2. Improve the Obsolesced concern to add the #is_obsolesced? method
+
+## v1.3
+1. Improve the Acting model to ad the .act! method
+2. Improve the As Acted concern to add the #is_acted! method
+
+## v1.4
+1. Improve the As Acted concern to add the #is_acted? method
+
+## v1.5
+1. Improve the As State Transitor Party concern to add the #transit! method
+2. Improve the As Obsolescer Party concern to add the obsolesce! method
+
+## v1.6
+1. Improve the As State Transitor Party concern to add the #transit? method
+2. Improve the As Obsolescer Party concern to add the obsolesce? method
