@@ -19,3 +19,7 @@
 ## v0.5
 1. As Obsolesced concern
 2. As Acted concern
+
+## v0.6
+1. As State Transitor Party concern
+2. As Obsolescer Party concern
