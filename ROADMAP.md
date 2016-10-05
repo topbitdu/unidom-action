@@ -25,12 +25,7 @@
 2. As Obsolescer Party concern
 
 ## v0.7
-1. As State Transitor Visitor concern
-2. As Obsolescer Visitor concern
-
-## v0.8
 1. As Actor Party concern
-2. As Actor Visitor concern
 
 ## v1.0
 1. Improve the State Transition model to add the .transit! method
