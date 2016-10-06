@@ -23,3 +23,6 @@
 ## v0.6
 1. As State Transitor Party concern
 2. As Obsolescer Party concern
+
+## v0.7
+1. As Actor Party concern

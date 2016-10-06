@@ -73,6 +73,11 @@ include Unidom::Action::Concerns::AsStateTransitorParty
 The As Acted concern do the following tasks for the includer automatically:  
 1. Define the has_many :actings macro as: ``has_many :actings, class_name: 'Unidom::Action::Acting', as: :acted``  
 
+### As Actor Party concern
+
+The As Actor Party concern do the following tasks for the includer automatically:  
+1. Define the has_many :acted_actings macro as: ``has_many :acted_actings, class_name: 'Unidom::Action::Acting', as: :actor_party``  
+
 ### As Obsolesced concern
 
 The As Obsolesced concern do the following tasks for the includer automatically:  
