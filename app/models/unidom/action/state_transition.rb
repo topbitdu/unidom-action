@@ -13,4 +13,8 @@ class Unidom::Action::StateTransition < Unidom::Action::ApplicationRecord
   belongs_to :subject,           polymorphic: true
   belongs_to :reason,            class_name:  'Unidom::Action::Reason'
 
+  def self.transit!(subject: nil, from_state: nil, thru_state: nil, transitor_visitor: nil, transitor_party: nil, reason: nil, opened_at: Time.now)
+    create! transitor_visitor: transitor_visitor, transitor_party: transitor_party, subject: subject, reason: reason, from_state: from_state, thru_state: thru_state, opened_at: opened_at
+  end
+
 end
