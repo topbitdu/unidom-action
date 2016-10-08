@@ -48,11 +48,19 @@ acting = Unidom::Action::Acting.create! actor_visitor: user, actor_party: person
 # Update the state of the person
 person.state = 'R'
 person.save!
+# Create a state transition to record the above change
 transition = Unidom::Action::StateTransition.create! transitor_visitor: user, transitor_party: person, reason: reason, subject: person, from_state: 'C', thru_state: 'R'
+# The following source code also create a state transition to record the above change
+transition = Unidom::Action::StateTransition.transit! transitor_visitor: user, transitor_party: person, reason: reason, subject: person, from_state: 'C', thru_state: 'R', opened_at: Time.now
+# The reason could be nil.
 
 # Soft destroy the person
 person.soft_destroy
-obsolescence = Unidom::Action::Obsolescence.create! obsolescer_visitor: user, obsolescer_party: person, reason: reason, obsolesced: person
+# Create an obsolescing to record the above change
+obsolescence = Unidom::Action::Obsolescing.create! obsolescer_visitor: user, obsolescer_party: person, reason: reason, obsolesced: person, obsolescence_code: 'OBSL'
+# The following source code also create an obsolescing to record the above change
+obsolescence = Unidom::Action::Obsolescing.obsolesce! obsolesced: person, obsolescer_visitor: user, obsolescer_party: person, reason: reason, obsolescence_code: 'OBSL', opened_at: Time.now
+
 # The reason could be nil.
 ```
 

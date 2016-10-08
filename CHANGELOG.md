@@ -26,3 +26,7 @@
 
 ## v0.7
 1. As Actor Party concern
+
+## v1.0
+1. Improve the State Transition model to add the .transit! method
+2. Improve the Obsolescing model to add the .obsolesce! method
