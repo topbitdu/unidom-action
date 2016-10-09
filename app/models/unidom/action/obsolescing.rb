@@ -14,6 +14,11 @@ class Unidom::Action::Obsolescing < Unidom::Action::ApplicationRecord
   belongs_to :obsolesced,         polymorphic: true
   belongs_to :reason,             class_name:  'Unidom::Action::Reason'
 
+  scope :obsolesced_via, ->(obsolescer_visitor) { where obsolescer_visitor: obsolescer_visitor }
+  scope :obsolesced_by,  ->(obsolescer_party)   { where obsolescer_party:   obsolescer_party   }
+  scope :obsolesced_is,  ->(obsolesced)         { where obsolesced:         obsolesced         }
+  scope :caused_by,      ->(reason)             { where reason_id:          to_id(reason)      }
+
   def self.obsolesce!(obsolesced: nil, obsolescer_visitor: nil, obsolescer_party: nil, reason: nil, obsolescence_code: 'OBSL', opened_at: Time.now)
     create! obsolesced: obsolesced, obsolescer_visitor: obsolescer_visitor, obsolescer_party: obsolescer_party, reason: reason, obsolescence_code: obsolescence_code, opened_at: opened_at
   end
