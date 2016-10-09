@@ -44,6 +44,7 @@ user   = Unidom::Visitor::User.create!
 # Create/Update/Delete the person
 person = Unidom::Party::Person.create! name: 'Tim'
 acting = Unidom::Action::Acting.create! actor_visitor: user, actor_party: person, reason: reason, acted: person, from_value: {}, thru_value: { name: 'Time' }
+actings = Unidom::Action::Acting.acted_via(user).acted_by(person).acted_is(person).caused_by(reason)
 
 # Update the state of the person
 person.state = 'R'
@@ -53,15 +54,16 @@ transition = Unidom::Action::StateTransition.create! transitor_visitor: user, tr
 # The following source code also create a state transition to record the above change
 transition = Unidom::Action::StateTransition.transit! transitor_visitor: user, transitor_party: person, reason: reason, subject: person, from_state: 'C', thru_state: 'R', opened_at: Time.now
 # The reason could be nil.
+transitions = Unidom::Action::StateTransition.transited_via(user).transited_by(person).subject_is(subject).caused_by(reason).from_transited_to('C').thru_transited_to('R')
 
 # Soft destroy the person
 person.soft_destroy
 # Create an obsolescing to record the above change
-obsolescence = Unidom::Action::Obsolescing.create! obsolescer_visitor: user, obsolescer_party: person, reason: reason, obsolesced: person, obsolescence_code: 'OBSL'
+obsolescing = Unidom::Action::Obsolescing.create! obsolescer_visitor: user, obsolescer_party: person, reason: reason, obsolesced: person, obsolescence_code: 'OBSL'
 # The following source code also create an obsolescing to record the above change
-obsolescence = Unidom::Action::Obsolescing.obsolesce! obsolesced: person, obsolescer_visitor: user, obsolescer_party: person, reason: reason, obsolescence_code: 'OBSL', opened_at: Time.now
-
+obsolescing = Unidom::Action::Obsolescing.obsolesce! obsolesced: person, obsolescer_visitor: user, obsolescer_party: person, reason: reason, obsolescence_code: 'OBSL', opened_at: Time.now
 # The reason could be nil.
+obsolescings = Unidom::Action::Obsolescing.obsolesced_via(user).obsolesced_by(person).obsolesced_is(person).caused_by(reason).obsolescence_coded_as('OBSL')
 ```
 
 
