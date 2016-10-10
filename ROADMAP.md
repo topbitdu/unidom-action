@@ -45,7 +45,7 @@
 2. Improve the As Obsolesced concern to add the #is_obsolesced? method
 
 ## v1.4
-1. Improve the Acting model to ad the .act! method
+1. Improve the Acting model to add the .act! method
 2. Improve the As Acted concern to add the #is_acted! method
 
 ## v1.5
