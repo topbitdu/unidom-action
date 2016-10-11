@@ -10,7 +10,6 @@ module Unidom::Action::Concerns::AsStateSubject
       state_transitions.create! from_state: from, thru_state: thru, transitor_visitor: via, transitor_party: by, reason: due_to, opened_at: at
     end
 
-=begin
     def is_transited?(from: nil, thru: nil, due_to: nil, via: nil, by: nil, at: Time.now)
       query = state_transitions
       query = query.from_transited_to from    if from.present?
@@ -21,7 +20,6 @@ module Unidom::Action::Concerns::AsStateSubject
       query = query.valid_at          now: at if at.present?
       query.exists?
     end
-=end
 
   end
 
