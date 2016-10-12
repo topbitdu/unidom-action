@@ -19,4 +19,8 @@ class Unidom::Action::Acting < Unidom::Action::ApplicationRecord
   scope :acted_is,  ->(acted)         { where acted:         acted         }
   scope :caused_by, ->(reason)        { where reason_id:     to_id(reason) }
 
+  def self.act!(it, from: nil, thru: nil, due_to: nil, by: nil, via: nil, at: Time.now, action_code: 'C')
+    create! from_value: from, thru_value: thru, actor_visitor: via, actor_party: by, acted: it, reason: due_to, action_code: action_code, opened_at: at
+  end
+
 end
