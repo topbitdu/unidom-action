@@ -92,7 +92,8 @@ The As Actor Party concern do the following tasks for the includer automatically
 
 The As Obsolesced concern do the following tasks for the includer automatically:  
 1. Define the has_many :obsolescings macro as: ``has_many :obsolescings, class_name: 'Unidom::Action::Obsolescing', as: :obsolesced``  
-2. Define the #is_obsolesced! method as: ``is_obsolesced!(obsolescence_code: 'OBSL', due_to: nil, via: nil, by: nil, at: Time.now)``
+2. Define the #is_obsolesced! method as: ``is_obsolesced!(obsolescence_code: 'OBSL', due_to: nil, via: nil, by: nil, at: Time.now)``  
+3. Define the #is_obsolesced? method as: ``is_obsolesced?(obsolescence_code: 'OBSL', due_to: nil, via: nil, by: nil, at: Time.now)``
 
 ### As Obsolescer Party concern
 
@@ -103,6 +104,8 @@ The As Obsolescer Party concern do the following tasks for the includer automati
 
 The As State Subject concern do the following tasks for the includer automatically:  
 1. Define the has_many :state_transitions macro as: ``has_many :state_transitions, class_name: 'Unidom::Action::StateTransition', as: :subject``  
+2. Define the #is_transited! method as: ``is_transited!(from: nil, thru: nil, due_to: nil, via: nil, by: nil, at: Time.now)``  
+3. Define the #is_transited? method as: ``is_transited?(from: nil, thru: nil, due_to: nil, via: nil, by: nil, at: Time.now)``
 
 ### As State Transitor Party concern
 
