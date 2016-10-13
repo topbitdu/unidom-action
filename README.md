@@ -43,7 +43,10 @@ user   = Unidom::Visitor::User.create!
 
 # Create/Update/Delete the person
 person = Unidom::Party::Person.create! name: 'Tim'
-acting = Unidom::Action::Acting.create! actor_visitor: user, actor_party: person, reason: reason, acted: person, from_value: {}, thru_value: { name: 'Time' }
+acting = Unidom::Action::Acting.create! actor_visitor: user, actor_party: person, reason: reason, acted: person, from_value: {}, thru_value: { name: 'Tim' }
+# or the following source code do the exact same thing
+acting = Unidom::Action::Acting.act! person, from: {}, thru: { name: 'Tim' }, due_to: reason, by: person, via: user, at: Time.now, action_code: 'C'
+
 actings = Unidom::Action::Acting.acted_via(user).acted_by(person).acted_is(person).caused_by(reason)
 
 # Update the state of the person
@@ -82,6 +85,7 @@ include Unidom::Action::Concerns::AsStateTransitorParty
 
 The As Acted concern do the following tasks for the includer automatically:  
 1. Define the has_many :actings macro as: ``has_many :actings, class_name: 'Unidom::Action::Acting', as: :acted``  
+2. Define the #is_acted! method as: ``is_acted!(from: nil, thru: nil, due_to: nil, by: nil, via: nil, at: Time.now, action_code: 'C')``
 
 ### As Actor Party concern
 
