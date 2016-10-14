@@ -86,6 +86,7 @@ include Unidom::Action::Concerns::AsStateTransitorParty
 The As Acted concern do the following tasks for the includer automatically:  
 1. Define the has_many :actings macro as: ``has_many :actings, class_name: 'Unidom::Action::Acting', as: :acted``  
 2. Define the #is_acted! method as: ``is_acted!(from: nil, thru: nil, due_to: nil, by: nil, via: nil, at: Time.now, action_code: 'C')``
+3. Define the #is_acted? method as: ``is_acted?(due_to: nil, by: nil, via: nil, at: Time.now, action_code: 'C')``
 
 ### As Actor Party concern
 
