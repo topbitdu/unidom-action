@@ -104,6 +104,7 @@ The As Obsolesced concern do the following tasks for the includer automatically:
 
 The As Obsolescer Party concern do the following tasks for the includer automatically:  
 1. Define the has_many :obsolesced_obsolescings macro as: ``has_many :obsolesced_obsolescings, class_name: 'Unidom::Action::Obsolescing', as: :obsolescer_party``  
+2. Define the #obsolesce! method as: ``obsolesce!(it, obsolescence_code: 'OBSL', due_to: nil, via: nil, at: Time.now)``
 
 ### As State Subject concern
 
@@ -116,4 +117,4 @@ The As State Subject concern do the following tasks for the includer automatical
 
 The As State Transitor Party concern do the following tasks for the includer automatically:  
 1. Define the has_many :transited_state_transitions macro as: ``has_many :transited_state_transitions, class_name: 'Unidom::Action::StateTransition', as: :transitor_party``  
-2. Define the #is_transited! method as: ``is_transited!(from: nil, thru: nil, due_to: nil, via: nil, by: nil, at: Time.now)``
+2. Define the #transit! method as: ``transit!(it, from: nil, thru: nil, due_to: nil, via: nil, at: Time.now)``
