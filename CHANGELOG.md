@@ -58,3 +58,6 @@
 ## v1.7
 1. Improve the As State Transitor Party concern to add the #transit? method
 2. Improve the As Obsolescer Party concern to add the #obsolesce? method
+
+## v1.8
+1. Improve the As Actor Party concern to add the #act! method
