@@ -93,6 +93,7 @@ The As Acted concern do the following tasks for the includer automatically:
 The As Actor Party concern do the following tasks for the includer automatically:  
 1. Define the has_many :acted_actings macro as: ``has_many :acted_actings, class_name: 'Unidom::Action::Acting', as: :actor_party``  
 2. Define the #act! method as: ``act!(on: nil, from: nil, thru: nil, due_to: nil, via: nil, at: Time.now, action_code: 'C')``  
+3. Define the #act? method as: ``act?(on: nil, due_to: nil, via: nil, at: Time.now, action_code: 'C')``
 
 ### As Obsolesced concern
 

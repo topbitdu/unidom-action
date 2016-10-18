@@ -61,3 +61,6 @@
 
 ## v1.8
 1. Improve the As Actor Party concern to add the #act! method
+
+## v1.9
+1. Improve the As Actor Party concern to add the #act? method
