@@ -1,0 +1,6 @@
+'zh-CN':
+  enum:
+
+    unidom_obsolescence:
+      obsolesce: 过期
+      recover:   恢复
