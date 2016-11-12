@@ -1,0 +1,7 @@
+enum:
+
+  unidom_obsolescence:
+    obsolesce:
+      code: 'OBSL'
+    recover:
+      code: 'RCVR'
