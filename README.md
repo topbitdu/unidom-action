@@ -130,6 +130,6 @@ The As State Transitor Party concern do the following tasks for the includer aut
 ### Obsolescence enum code
 
 ```ruby
-Unidom::Action::Obsolescence::Obsolesce
-Unidom::Action::Obsolescence::Recover
+Unidom::Action::Obsolescence::OBSOLESCE
+Unidom::Action::Obsolescence::RECOVER
 ```
