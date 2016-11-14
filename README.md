@@ -122,3 +122,14 @@ The As State Transitor Party concern do the following tasks for the includer aut
 1. Define the has_many :transited_state_transitions macro as: ``has_many :transited_state_transitions, class_name: 'Unidom::Action::StateTransition', as: :transitor_party``  
 2. Define the #transit! method as: ``transit!(it, from: nil, thru: nil, due_to: nil, via: nil, at: Time.now)``  
 3. Define the #transit? method as: ``transit?(it, from: nil, thru: nil, due_to: nil, via: nil, at: Time.now)``
+
+
+
+## Enum codes
+
+### Obsolescence enum code
+
+```ruby
+Unidom::Action::Obsolescence::Obsolesce
+Unidom::Action::Obsolescence::Recover
+```
