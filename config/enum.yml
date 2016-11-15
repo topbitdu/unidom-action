@@ -5,3 +5,15 @@ enum:
       code: 'OBSL'
     recover:
       code: 'RCVR'
+
+  unidom_action:
+    create:
+      code: 'C'
+    destroy:
+      code: 'D'
+    index:
+      code: 'I'
+    show:
+      code: 'S'
+    update:
+      code: 'U'
