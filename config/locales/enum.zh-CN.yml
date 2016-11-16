@@ -4,3 +4,10 @@
     unidom_obsolescence:
       obsolesce: 过期
       recover:   恢复
+
+    unidom_action:
+      create:  创建
+      destroy: 销毁
+      index:   检索
+      show:    显示
+      update:  更新
