@@ -8,6 +8,7 @@ class Unidom::Action::Acting < Unidom::Action::ApplicationRecord
   self.table_name = 'unidom_actings'
 
   include Unidom::Common::Concerns::ModelExtension
+  include ProgneTapera::EnumCode
 
   belongs_to :actor_visitor, polymorphic: true
   belongs_to :actor_party,   polymorphic: true
@@ -18,6 +19,8 @@ class Unidom::Action::Acting < Unidom::Action::ApplicationRecord
   scope :acted_by,  ->(actor_party)   { where actor_party:   actor_party   }
   scope :acted_is,  ->(acted)         { where acted:         acted         }
   scope :caused_by, ->(reason)        { where reason_id:     to_id(reason) }
+
+  code :action, Unidom::Action::Action
 
   def self.act!(it, from: nil, thru: nil, due_to: nil, by: nil, via: nil, at: Time.now, action_code: 'C')
     create! from_value: from, thru_value: thru, actor_visitor: via, actor_party: by, acted: it, reason: due_to, action_code: action_code, opened_at: at
