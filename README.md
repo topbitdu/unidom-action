@@ -133,3 +133,13 @@ The As State Transitor Party concern do the following tasks for the includer aut
 Unidom::Action::Obsolescence::OBSOLESCE
 Unidom::Action::Obsolescence::RECOVER
 ```
+
+### Action enum code
+
+```ruby
+Unidom::Action::Action::CREATE
+Unidom::Action::Action::DESTROY
+Unidom::Action::Action::INDEX
+Unidom::Action::Action::SHOW
+Unidom::Action::Action::UPDATE
+```
