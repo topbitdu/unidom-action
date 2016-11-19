@@ -78,3 +78,6 @@
 ## v1.11
 1. Action enum code
 2. Improve the Acting model to configure the Action enum code
+
+## v1.12
+1. Searching model & migration
