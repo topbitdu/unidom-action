@@ -2,7 +2,7 @@
 
 ## v0.1
 1. Reason model & migration (20000501000000)
-2. State Transition model & migration
+2. State Transition model & migration (20000511000000)
 
 ## v0.2
 1. Obsolescence model & migration
