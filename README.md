@@ -67,6 +67,15 @@ obsolescing = Unidom::Action::Obsolescing.create! obsolescer_visitor: user, obso
 obsolescing = Unidom::Action::Obsolescing.obsolesce! obsolesced: person, obsolescer_visitor: user, obsolescer_party: person, reason: reason, obsolescence_code: 'OBSL', opened_at: Time.now
 # The reason could be nil.
 obsolescings = Unidom::Action::Obsolescing.obsolesced_via(user).obsolesced_by(person).obsolesced_is(person).caused_by(reason).obsolescence_coded_as('OBSL')
+
+# Search the people
+found_count = Unidom::Party::Person.where(name: 'Tim').count
+shown_count = ... # the item count on the current page, it's calculated per found_count, page, & per_page
+total_pages = ... # the total page count calculated per found_count, & per_page
+
+@people = Unidom::Party::Person.where(name: 'Tim').paginate page: params[:page], per_page: params[:per_page]||Rails.configuration.pagination[:administration_v2_people][:per_page]
+
+searching = Unidom::Action::Searching.create! searcher_visitor: user, searcher_party: person, reason_id: reason.id, resource_name: 'person', platform_name: 'administration', platform_version: '2', criteria: { name: 'Tim' }, found_count: found_count, shown_count: show_count, per_page: params[:per_page]||Rails.configuration.pagination[:administration_v2_people][:per_page], total_pages: total_pages, current_page: params[:page]
 ```
 
 
