@@ -84,3 +84,6 @@
 
 ## v1.12
 1. Searching model & migration
+
+## v1.13
+1. Improve the Searching model to add the .search! method
