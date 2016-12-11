@@ -1,5 +1,5 @@
 module Unidom
   module Action
-    VERSION = '1.12'.freeze
+    VERSION = '1.13'.freeze
   end
 end
