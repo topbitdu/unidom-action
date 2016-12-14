@@ -36,7 +36,7 @@ class Unidom::Action::Searching < Unidom::Action::ApplicationRecord
   #   displaying: 10, items_on_page: 3, of: 63, items_and: 7, pages_in_total
   def self.search!(it, due_to: nil, by: nil, via: nil, at: Time.now, displaying: 0, items_on_page: 0, shown_count: 0, of: 0)
     self.create! resource_name: it, reason: due_to, by: searcher_party, via: searcher_visitor, opened_at: at,
-      shown_count: displaying, current_page: items_on_page, found_count: of, total_page: items_and,
+      shown_count: displaying, current_page: items_on_page, found_count: of, total_page: items_and, per_page: 10
   end
 
 end
