@@ -75,7 +75,18 @@ total_pages = ... # the total page count calculated per found_count, & per_page
 
 @people = Unidom::Party::Person.where(name: 'Tim').paginate page: params[:page], per_page: params[:per_page]||Rails.configuration.pagination[:administration_v2_people][:per_page]
 
-searching = Unidom::Action::Searching.create! searcher_visitor: user, searcher_party: person, reason_id: reason.id, resource_name: 'person', platform_name: 'administration', platform_version: '2', criteria: { name: 'Tim' }, found_count: found_count, shown_count: show_count, per_page: params[:per_page]||Rails.configuration.pagination[:administration_v2_people][:per_page], total_pages: total_pages, current_page: params[:page]
+searching = Unidom::Action::Searching.search! 'people',
+  on:              'administration',
+  version:         '2',
+  per:             { name: 'Tim' },
+  by:              current_person,
+  via:             current_user,
+  displaying:      10,
+  of_total:        63,
+  on_current_page: params[:page],
+  of_total_page:   7,
+  per_page:        params[:per_page]||Rails.configuration.pagination[:administration_v2_people][:per_page]
+
 ```
 
 
