@@ -87,3 +87,6 @@
 
 ## v1.13
 1. Improve the Searching model to add the .search! method
+
+## v1.14
+1. As Searcher Party concern
