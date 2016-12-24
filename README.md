@@ -95,8 +95,10 @@ searching = Unidom::Action::Searching.search! 'people',
 
 ```ruby
 include Unidom::Action::Concerns::AsActed
+include Unidom::Action::Concerns::AsActorParty
 include Unidom::Action::Concerns::AsObsolesced
 include Unidom::Action::Concerns::AsObsolescerParty
+include Unidom::Action::Concerns::AsSearcherParty
 include Unidom::Action::Concerns::AsStateSubject
 include Unidom::Action::Concerns::AsStateTransitorParty
 ```
@@ -128,6 +130,11 @@ The As Obsolescer Party concern do the following tasks for the includer automati
 1. Define the has_many :obsolesced_obsolescings macro as: ``has_many :obsolesced_obsolescings, class_name: 'Unidom::Action::Obsolescing', as: :obsolescer_party``  
 2. Define the #obsolesce! method as: ``obsolesce!(it, obsolescence_code: 'OBSL', due_to: nil, via: nil, at: Time.now)``  
 3. Define the #obsolesce? method as: ``obsolesce?(it, obsolescence_code: 'OBSL', due_to: nil, via: nil, at: Time.now)``
+
+### As Searcher Party concern
+
+The As Searcher Party concern do the following tasks for the includer automatically:  
+1. Define the has_many :searched_searchings macro as: ``has_many :searched_searchings, class_name: 'Unidom::Action::Searching', as: :searcher_party``  
 
 ### As State Subject concern
 
