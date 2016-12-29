@@ -90,3 +90,6 @@
 
 ## v1.14
 1. As Searcher Party concern
+
+## v1.15
+1. Improve the As Searcher Party concern to add the #search! method
