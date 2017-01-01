@@ -12,7 +12,6 @@ module Unidom::Action::Concerns::AsSearcherParty
         shown_count: displaying, found_count: of_total, current_page: on_current_page, total_pages: of_total_page, per_page: per_page
     end
 
-=begin
     def search?(it, on: '', version: '1', due_to: nil, at: Time.now)
       query = searched_searchings
       query = query.resource_name_is    it      if it.present?
@@ -22,7 +21,6 @@ module Unidom::Action::Concerns::AsSearcherParty
       query = query.valid_at            now: at if at.present?
       query.alive.exists?
     end
-=end
 
   end
 
