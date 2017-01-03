@@ -106,6 +106,7 @@ include Unidom::Action::Concerns::AsStateTransitorParty
 ### As Acted concern
 
 The As Acted concern do the following tasks for the includer automatically:
+
 1. Define the has_many :actings macro as: ``has_many :actings, class_name: 'Unidom::Action::Acting', as: :acted``
 
 2. Define the #is_acted! method as: ``is_acted!(from: nil, thru: nil, due_to: nil, by: nil, via: nil, at: Time.now, action_code: 'C')``
@@ -115,6 +116,7 @@ The As Acted concern do the following tasks for the includer automatically:
 ### As Actor Party concern
 
 The As Actor Party concern do the following tasks for the includer automatically:
+
 1. Define the has_many :acted_actings macro as: ``has_many :acted_actings, class_name: 'Unidom::Action::Acting', as: :actor_party``
 
 2. Define the #act! method as: ``act!(on: nil, from: nil, thru: nil, due_to: nil, via: nil, at: Time.now, action_code: 'C')``
@@ -124,6 +126,7 @@ The As Actor Party concern do the following tasks for the includer automatically
 ### As Obsolesced concern
 
 The As Obsolesced concern do the following tasks for the includer automatically:
+
 1. Define the has_many :obsolescings macro as: ``has_many :obsolescings, class_name: 'Unidom::Action::Obsolescing', as: :obsolesced``
 
 2. Define the #is_obsolesced! method as: ``is_obsolesced!(obsolescence_code: 'OBSL', due_to: nil, via: nil, by: nil, at: Time.now)``
@@ -133,6 +136,7 @@ The As Obsolesced concern do the following tasks for the includer automatically:
 ### As Obsolescer Party concern
 
 The As Obsolescer Party concern do the following tasks for the includer automatically:
+
 1. Define the has_many :obsolesced_obsolescings macro as: ``has_many :obsolesced_obsolescings, class_name: 'Unidom::Action::Obsolescing', as: :obsolescer_party``
 
 2. Define the #obsolesce! method as: ``obsolesce!(it, obsolescence_code: 'OBSL', due_to: nil, via: nil, at: Time.now)``
@@ -142,13 +146,17 @@ The As Obsolescer Party concern do the following tasks for the includer automati
 ### As Searcher Party concern
 
 The As Searcher Party concern do the following tasks for the includer automatically:
+
 1. Define the has_many :searched_searchings macro as: ``has_many :searched_searchings, class_name: 'Unidom::Action::Searching', as: :searcher_party``
 
 2. Define the #search! method as: ``search!(it, on: '', version: '1', per: {}, due_to: nil, via: nil, at: Time.now, displaying: 0, of_total: 0, on_current_page: 0, of_total_page: 0, per_page: 0)``
 
+3. Define the #search? method as: ``search?(it, on: '', version: '1', due_to: nil, at: Time.now)``
+
 ### As State Subject concern
 
 The As State Subject concern do the following tasks for the includer automatically:
+
 1. Define the has_many :state_transitions macro as: ``has_many :state_transitions, class_name: 'Unidom::Action::StateTransition', as: :subject``
 
 2. Define the #is_transited! method as: ``is_transited!(from: nil, thru: nil, due_to: nil, via: nil, by: nil, at: Time.now)``
@@ -158,6 +166,7 @@ The As State Subject concern do the following tasks for the includer automatical
 ### As State Transitor Party concern
 
 The As State Transitor Party concern do the following tasks for the includer automatically:
+
 1. Define the has_many :transited_state_transitions macro as: ``has_many :transited_state_transitions, class_name: 'Unidom::Action::StateTransition', as: :transitor_party``
 
 2. Define the #transit! method as: ``transit!(it, from: nil, thru: nil, due_to: nil, via: nil, at: Time.now)``
