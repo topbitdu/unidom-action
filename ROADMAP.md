@@ -101,3 +101,7 @@
 1. Improve the Ruby Gem Specification to depend on [unidom-common](https://github.com/topbitdu/unidom-common) v1.8
 2. Improve the Ruby Gem Specification to never depend on [progne_tapera](https://github.com/topbitdu/progne_tapera)
 3. Improve the Engine class to include the Engine Extension concern
+
+## v1.16.2
+1. Improve the Ruby Gem Specification to depend on [unidom-common](https://github.com/topbitdu/unidom-common) v1.9
+2. Improve the models to support the namespace neglecting
