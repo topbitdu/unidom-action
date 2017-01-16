@@ -27,4 +27,4 @@ class Unidom::Action::Acting < Unidom::Action::ApplicationRecord
     create! from_value: from, thru_value: thru, actor_visitor: via, actor_party: by, acted: it, reason: due_to, action_code: action_code, opened_at: at
   end
 
-end
+end unless Unidom::Common::Neglection.namespace_neglected? 'Unidom::Action::Acting'
