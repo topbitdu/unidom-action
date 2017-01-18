@@ -1,3 +1,4 @@
+##
 # Obsolescing 是废弃。
 # #reason 是原因。
 # #obsolesced 是被废弃的对象。
