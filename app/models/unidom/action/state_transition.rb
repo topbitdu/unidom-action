@@ -1,3 +1,4 @@
+##
 # State Transition 是状态迁移。
 # #reason 是原因。
 # #subject 是状态的主体。
