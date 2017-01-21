@@ -10,4 +10,4 @@ class Unidom::Action::Reason < Unidom::Action::ApplicationRecord
 
   validates :name, presence: true, length: { in: 2..self.columns_hash['name'].limit }
 
-end
+end unless Unidom::Common::Neglection.namespace_neglected? 'Unidom::Action::Reason'
