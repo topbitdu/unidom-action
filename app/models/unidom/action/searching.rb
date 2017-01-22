@@ -39,4 +39,4 @@ class Unidom::Action::Searching < Unidom::Action::ApplicationRecord
       shown_count: displaying, found_count: of_total, current_page: on_current_page, total_pages: of_total_page, per_page: per_page
   end
 
-end
+end unless Unidom::Common::Neglection.namespace_neglected? 'Unidom::Action::Searching'
