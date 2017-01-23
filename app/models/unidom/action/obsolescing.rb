@@ -27,4 +27,4 @@ class Unidom::Action::Obsolescing < Unidom::Action::ApplicationRecord
     create! obsolesced: obsolesced, obsolescer_visitor: obsolescer_visitor, obsolescer_party: obsolescer_party, reason: reason, obsolescence_code: obsolescence_code, opened_at: opened_at
   end
 
-end
+end unless Unidom::Common::Neglection.namespace_neglected? 'Unidom::Action::Obsolescing'
