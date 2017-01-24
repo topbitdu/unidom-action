@@ -23,4 +23,4 @@ class Unidom::Action::StateTransition < Unidom::Action::ApplicationRecord
     create! transitor_visitor: transitor_visitor, transitor_party: transitor_party, subject: subject, reason: reason, from_state: from_state, thru_state: thru_state, opened_at: opened_at
   end
 
-end
+end unless Unidom::Common::Neglection.namespace_neglected? 'Unidom::Action::StateTransition'
