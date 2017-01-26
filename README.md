@@ -195,3 +195,19 @@ Unidom::Action::Action::INDEX
 Unidom::Action::Action::SHOW
 Unidom::Action::Action::UPDATE
 ```
+
+
+
+## Disable the Model & Migration
+
+If you only need the app components other than models, the migrations should be neglected, and the models should not be loaded.
+```ruby
+# config/initializers/unidom.rb
+Unidom::Common.configure do |options|
+
+  options[:neglected_namespaces] = %w{
+    Unidom::Action
+  }
+
+end
+```
