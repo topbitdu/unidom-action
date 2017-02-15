@@ -23,6 +23,8 @@ describe Unidom::Action::Acting, type: :model do
 
     it_behaves_like 'Unidom::Common::Concerns::ModelExtension', model_attributes
 
+    it_behaves_like 'ProgneTapera::EnumCode', described_class.new(model_attributes), :action, Unidom::Action::Action
+
   end
 
 end
