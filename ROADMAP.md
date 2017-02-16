@@ -114,4 +114,4 @@
 ## v1.17.1
 1. Improve the Reason spec for the validations on the #name attribute
 2. Improve the Acting spec for the #action_code attribute
-2. Improve the Obsolescing spec for the #obsolescence_code attribute
+3. Improve the Obsolescing spec for the #obsolescence_code attribute
