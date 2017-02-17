@@ -21,6 +21,8 @@ describe Unidom::Action::Obsolescing, type: :model do
 
     it_behaves_like 'Unidom::Common::Concerns::ModelExtension', model_attributes
 
+    it_behaves_like 'ProgneTapera::EnumCode', described_class.new(model_attributes), :obsolescence, Unidom::Action::Obsolescence
+
   end
 
 end
