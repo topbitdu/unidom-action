@@ -25,6 +25,8 @@ describe Unidom::Action::Acting, type: :model do
 
     it_behaves_like 'ProgneTapera::EnumCode', described_class.new(model_attributes), :action, Unidom::Action::Action
 
+    it_behaves_like 'belongs_to', model_attributes, :reason, Unidom::Action::Reason, { name: 'Some Reason' }
+
   end
 
 end
