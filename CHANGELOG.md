@@ -115,3 +115,9 @@
 1. Improve the Reason spec for the validations on the #name attribute
 2. Improve the Acting spec for the #action_code attribute
 3. Improve the Obsolescing spec for the #obsolescence_code attribute
+
+## v1.17.2
+1. Improve the Acting spec for the ``belongs_to :reason, class_name: 'Unidom::Action::Reason'`` macro
+2. Improve the Obsolescing spec for the ``belongs_to :reason, class_name: 'Unidom::Action::Reason'`` macro
+3. Improve the Searching spec for the ``belongs_to :reason, class_name: 'Unidom::Action::Reason'`` macro
+4. Improve the State Transition spec for the ``belongs_to :reason, class_name: 'Unidom::Action::Reason'`` macro
