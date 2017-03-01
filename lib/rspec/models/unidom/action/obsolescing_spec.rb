@@ -25,6 +25,8 @@ describe Unidom::Action::Obsolescing, type: :model do
 
     it_behaves_like 'belongs_to', model_attributes, :reason, Unidom::Action::Reason, { name: 'Some Reason' }
 
+    it_behaves_like 'monomorphic scope', model_attributes, :caused_by, :reason
+
   end
 
 end
