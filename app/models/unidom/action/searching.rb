@@ -8,7 +8,10 @@ class Unidom::Action::Searching < Unidom::Action::ApplicationRecord
 
   include Unidom::Common::Concerns::ModelExtension
 
-  validates :resource_name, presence: true, length: { maximum: self.columns_hash['resource_name'].limit }
+  validates :resource_name,    presence: true, length: { maximum: self.columns_hash['resource_name'].limit }
+  validates :platform_name,    presence: true, length: { maximum: self.columns_hash['platform_name'].limit }
+  validates :platform_version, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 1_000_000_000 }
+
   validates :found_count,   presence: true, numericality: { integer_only: true, greater_than_or_equal_to: 0, less_than: 1_000_000_000 }
   validates :shown_count,   presence: true, numericality: { integer_only: true, greater_than_or_equal_to: 0, less_than: 1_000_000_000 }
   validates :per_page,      presence: true, numericality: { integer_only: true, greater_than_or_equal_to: 0, less_than: 1_000_000_000 }
