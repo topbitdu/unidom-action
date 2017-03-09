@@ -29,7 +29,7 @@
 
 ## v1.0
 1. Improved the State Transition model to add the .transit! method
-2. Improve the Obsolescing model to add the .obsolesce! method
+2. Improved the Obsolescing model to add the .obsolesce! method
 
 ## v1.1
 1. Improve the State Transition model to add the .transited_via scope, the .transited_by scope, the .subject_is scope, & the .caused_by scope
