@@ -14,7 +14,7 @@
 ## v0.4
 1. As State Subject concern
 2. Renamed the Obsolescence model to the Obsolescing model
-3. Improve the Obsolescing model to add the #obsolescence_code
+3. Improved the Obsolescing model to add the #obsolescence_code
 
 ## v0.5
 1. As Obsolesced concern
