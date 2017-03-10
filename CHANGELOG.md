@@ -73,7 +73,7 @@
 
 ## v1.10
 1. Obsolescence enum code
-2. Improve the Obsolescing model to configure the Obsolescence enum code
+2. Improved the Obsolescing model to configure the Obsolescence enum code
 
 ## v1.11
 1. Action enum code
