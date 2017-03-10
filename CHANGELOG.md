@@ -77,7 +77,7 @@
 
 ## v1.11
 1. Action enum code
-2. Improve the Acting model to configure the Action enum code
+2. Improved the Acting model to configure the Action enum code
 
 ## v1.11.1
 1. Improve the Ruby Gem Specification to depend on [progne_tapera](https://github.com/topbitdu/progne_tapera) v0.3
