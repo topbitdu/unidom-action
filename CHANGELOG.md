@@ -95,7 +95,7 @@
 1. Improved the As Searcher Party concern to add the #search! method
 
 ## v1.16
-1. Improve the As Searcher Party concern to add the #search? method
+1. Improved the As Searcher Party concern to add the #search? method
 
 ## v1.16.1
 1. Improve the Ruby Gem Specification to depend on [unidom-common](https://github.com/topbitdu/unidom-common) v1.8
