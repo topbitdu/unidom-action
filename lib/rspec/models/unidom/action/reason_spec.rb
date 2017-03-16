@@ -13,8 +13,6 @@ describe Unidom::Action::Reason, type: :model do
       activity_code: 'ZZZZ'
     }
 
-    name_max_length = described_class.columns_hash['name'].limit
-
     it_behaves_like 'Unidom::Common::Concerns::ModelExtension', model_attributes
 
     it_behaves_like 'validates text', model_attributes, :name,
