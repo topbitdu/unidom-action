@@ -139,3 +139,7 @@
 ## v1.17.6
 1. Improve the Searching spec for the validations on the #found_count attribute, the #shown_count attribute, the #per_page attribute, the #total_pages attribute, & the #current_page attribute
 2. Improve the Reason spec for the validations on the #name attribute
+
+## v1.17.7
+1. Improve the Searching model for the validations on the #resource_name attribute, & the #platform_name attribute
+2. Improve the Searching spec for the validations on the #resource_name attribute, & the #platform_name attribute
