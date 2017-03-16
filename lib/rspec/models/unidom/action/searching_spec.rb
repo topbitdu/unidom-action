@@ -25,48 +25,17 @@ describe Unidom::Action::Searching, type: :model do
       current_page:          2
     }
 
-    resource_name_max_length = described_class.columns_hash['resource_name'].limit
-    platform_name_max_length = described_class.columns_hash['platform_name'].limit
-
     it_behaves_like 'Unidom::Common::Concerns::ModelExtension', model_attributes
 
     it_behaves_like 'belongs_to', model_attributes, :reason, Unidom::Action::Reason, { name: 'Some Reason' }
 
     it_behaves_like 'monomorphic scope', model_attributes, :caused_by, :reason
 
-    it_behaves_like 'validates', model_attributes, :resource_name,
-      {                      } => 0,
-      { resource_name: nil   } => 1,
-      { resource_name: ''    } => 1,
-      { resource_name: '1'   } => 0,
-      { resource_name: 'A'   } => 0,
-      { resource_name: '11'  } => 0,
-      { resource_name: 'AA'  } => 0,
-      { resource_name: '111' } => 0,
-      { resource_name: 'AAA' } => 0,
-      { resource_name: '1'*(resource_name_max_length-1) } => 0,
-      { resource_name: 'A'*(resource_name_max_length-1) } => 0,
-      { resource_name: '1'*resource_name_max_length     } => 0,
-      { resource_name: 'A'*resource_name_max_length     } => 0,
-      { resource_name: '1'*(resource_name_max_length+1) } => 1,
-      { resource_name: 'A'*(resource_name_max_length+1) } => 1
+    it_behaves_like 'validates text', model_attributes, :resource_name,
+      length: 1..described_class.columns_hash['resource_name'].limit
 
-    it_behaves_like 'validates', model_attributes, :platform_name,
-      {                      } => 0,
-      { platform_name: nil   } => 1,
-      { platform_name: ''    } => 1,
-      { platform_name: '1'   } => 0,
-      { platform_name: 'A'   } => 0,
-      { platform_name: '11'  } => 0,
-      { platform_name: 'AA'  } => 0,
-      { platform_name: '111' } => 0,
-      { platform_name: 'AAA' } => 0,
-      { platform_name: '1'*(platform_name_max_length-1) } => 0,
-      { platform_name: 'A'*(platform_name_max_length-1) } => 0,
-      { platform_name: '1'*platform_name_max_length     } => 0,
-      { platform_name: 'A'*platform_name_max_length     } => 0,
-      { platform_name: '1'*(platform_name_max_length+1) } => 1,
-      { platform_name: 'A'*(platform_name_max_length+1) } => 1
+    it_behaves_like 'validates text', model_attributes, :platform_name,
+      length: 1..described_class.columns_hash['platform_name'].limit
 
     it_behaves_like 'validates numericality', model_attributes, :platform_version,
       range: 0..1_000_000_000, minimum_inclusive: true, maximum_inclusive: true, only_integer: true
