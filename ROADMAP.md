@@ -143,3 +143,10 @@
 ## v1.17.7
 1. Improve the Searching model for the validations on the #resource_name attribute, & the #platform_name attribute
 2. Improve the Searching spec for the validations on the #resource_name attribute, & the #platform_name attribute
+
+## v1.17.8
+1. As Caused concern
+2. Improve the Acting model, the Obsolescing model, the Searching model, & the State Transition model to include the As Caused concern
+3. As Caused shared examples
+4. RSpec shared examples manifest
+5. Improve the Acting spec, the Obsolescing spec, the Searching spec, & the State Transition spec for the As Caused concern
