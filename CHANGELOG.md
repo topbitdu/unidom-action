@@ -119,7 +119,7 @@
 ## v1.17.2
 1. Improved the Acting spec for the ``belongs_to :reason, class_name: 'Unidom::Action::Reason'`` macro
 2. Improved the Obsolescing spec for the ``belongs_to :reason, class_name: 'Unidom::Action::Reason'`` macro
-3. Improve the Searching spec for the ``belongs_to :reason, class_name: 'Unidom::Action::Reason'`` macro
+3. Improved the Searching spec for the ``belongs_to :reason, class_name: 'Unidom::Action::Reason'`` macro
 4. Improve the State Transition spec for the ``belongs_to :reason, class_name: 'Unidom::Action::Reason'`` macro
 
 ## v1.17.3
