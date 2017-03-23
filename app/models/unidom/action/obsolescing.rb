@@ -10,16 +10,15 @@ class Unidom::Action::Obsolescing < Unidom::Action::ApplicationRecord
 
   include Unidom::Common::Concerns::ModelExtension
   include ProgneTapera::EnumCode
+  include Unidom::Action::Concerns::AsCaused
 
   belongs_to :obsolescer_visitor, polymorphic: true
   belongs_to :obsolescer_party,   polymorphic: true
   belongs_to :obsolesced,         polymorphic: true
-  belongs_to :reason,             class_name:  'Unidom::Action::Reason'
 
   scope :obsolesced_via, ->(obsolescer_visitor) { where obsolescer_visitor: obsolescer_visitor }
   scope :obsolesced_by,  ->(obsolescer_party)   { where obsolescer_party:   obsolescer_party   }
   scope :obsolesced_is,  ->(obsolesced)         { where obsolesced:         obsolesced         }
-  scope :caused_by,      ->(reason)             { where reason_id:          to_id(reason)      }
 
   code :obsolescence, Unidom::Action::Obsolescence
 
