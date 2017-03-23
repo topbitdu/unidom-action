@@ -7,6 +7,7 @@ class Unidom::Action::Searching < Unidom::Action::ApplicationRecord
   self.table_name = 'unidom_searchings'
 
   include Unidom::Common::Concerns::ModelExtension
+  include Unidom::Action::Concerns::AsCaused
 
   validates :resource_name,    presence: true, length: { in: 1..self.columns_hash['resource_name'].limit }
   validates :platform_name,    presence: true, length: { in: 1..self.columns_hash['platform_name'].limit }
@@ -20,11 +21,9 @@ class Unidom::Action::Searching < Unidom::Action::ApplicationRecord
 
   belongs_to :searcher_visitor, polymorphic: true
   belongs_to :searcher_party,   polymorphic: true
-  belongs_to :reason,           class_name:  'Unidom::Action::Reason'
 
   scope :searched_by,  ->(searcher_party)   { where searcher_party:   searcher_party   }
   scope :searched_via, ->(searcher_visitor) { where searcher_visitor: searcher_visitor }
-  scope :caused_by,    ->(reason)           { where reason_id:        to_id(reason)    }
 
   scope :resource_name_is,    ->(resource_name)    { where resource_name:    resource_name    }
   scope :platform_name_is,    ->(platform_name)    { where platform_name:    platform_name    }
