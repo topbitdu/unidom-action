@@ -21,10 +21,7 @@ describe Unidom::Action::StateTransition, type: :model do
     }
 
     it_behaves_like 'Unidom::Common::Concerns::ModelExtension', model_attributes
-
-    it_behaves_like 'belongs_to', model_attributes, :reason, Unidom::Action::Reason, { name: 'Some Reason' }
-
-    it_behaves_like 'monomorphic scope', model_attributes, :caused_by, :reason
+    it_behaves_like 'Unidom::Action::Concerns::AsCaused',       model_attributes
 
   end
 
