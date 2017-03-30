@@ -125,6 +125,14 @@ The As Actor Party concern do the following tasks for the includer automatically
 
 3. Define the #act? method as: ``act?(on: nil, due_to: nil, via: nil, at: Time.now, action_code: 'C')``
 
+### As Caused concern
+
+The As Caused concern do the following tasks for the includer automatically:
+
+1. Define the belongs_to :reason macro as: ``belongs_to :reason, class_name: 'Unidom::Action::Reason'``
+
+2. Define the caused_by scope as: ``scope :caused_by, ->(reason) { where reason_id: to_id(reason) }``
+
 ### As Obsolesced concern
 
 The As Obsolesced concern do the following tasks for the includer automatically:
@@ -216,6 +224,8 @@ end
 
 ## RSpec examples
 
+### RSpec example manifest (run automatically)
+
 ```ruby
 # spec/models/unidom_spec.rb
 require 'unidom/action/models_rspec'
@@ -225,4 +235,31 @@ require 'unidom/action/types_rspec'
 
 # spec/validators/unidom_spec.rb
 require 'unidom/action/validators_rspec'
+```
+
+### RSpec shared examples (to be integrated)
+
+```ruby
+# The Unidom::Action::Acting model, the Unidom::Action::Obsolescing model, the Unidom::Action::Searching model, & the Unidom::Action::StateTransition model already include the Unidom::Action::Concerns::AsCaused concern
+
+# app/models/your_caused.rb
+class YourCaused < ApplicationRecord
+
+  include Unidom::Common::Concerns::ModelExtension
+  include Unidom::Action::Concerns::AsCaused
+
+end
+
+# spec/support/unidom_rspec_shared_examples.rb
+require 'unidom/action/rspec_shared_examples'
+
+# spec/models/your_caused_spec.rb
+describe YourCaused, type: :model do
+
+  model_attribtues = {
+  }
+
+  it_behaves_like 'Unidom::Action::Concerns::AsCaused', model_attribtues
+
+end
 ```
