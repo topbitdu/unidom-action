@@ -153,4 +153,4 @@
 
 ## v1.17.9
 1. As Acted shared examples
-2, As Actor Party shared examples
+2. As Actor Party shared examples
