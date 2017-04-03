@@ -240,8 +240,23 @@ require 'unidom/action/validators_rspec'
 ### RSpec shared examples (to be integrated)
 
 ```ruby
-# The Unidom::Action::Acting model, the Unidom::Action::Obsolescing model, the Unidom::Action::Searching model, & the Unidom::Action::StateTransition model already include the Unidom::Action::Concerns::AsCaused concern
+# app/models/your_acted.rb
+class YourActed < ApplicationRecord
 
+  include Unidom::Common::Concerns::ModelExtension
+  include Unidom::Action::Concerns::AsActed
+
+end
+
+# app/models/your_actor_party.rb
+class YourActorParty < ApplicationRecord
+
+  include Unidom::Common::Concerns::ModelExtension
+  include Unidom::Action::Concerns::AsActorParty
+
+end
+
+# The Unidom::Action::Acting model, the Unidom::Action::Obsolescing model, the Unidom::Action::Searching model, & the Unidom::Action::StateTransition model already include the Unidom::Action::Concerns::AsCaused concern
 # app/models/your_caused.rb
 class YourCaused < ApplicationRecord
 
@@ -252,6 +267,26 @@ end
 
 # spec/support/unidom_rspec_shared_examples.rb
 require 'unidom/action/rspec_shared_examples'
+
+# spec/models/your_acted_spec.rb
+describe YourActed, type: :model do
+
+  model_attribtues = {
+  }
+
+  it_behaves_like 'Unidom::Action::Concerns::AsActed', model_attribtues
+
+end
+
+# spec/models/your_actor_party_spec.rb
+describe YourActorParty, type: :model do
+
+  model_attribtues = {
+  }
+
+  it_behaves_like 'Unidom::Action::Concerns::AsActorParty', model_attribtues
+
+end
 
 # spec/models/your_caused_spec.rb
 describe YourCaused, type: :model do
