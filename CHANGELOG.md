@@ -125,7 +125,7 @@
 ## v1.17.3
 1. Improved the Acting spec for the caused_by scope
 2. Improved the Obsolescing spec for the caused_by scope
-3. Improve the Searching spec for the caused_by scope
+3. Improved the Searching spec for the caused_by scope
 4. Improve the State Transition spec for the caused_by scope
 
 ## v1.17.4
