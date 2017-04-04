@@ -32,7 +32,7 @@
 2. Improved the Obsolescing model to add the .``obsolesce!`` method
 
 ## v1.1
-1. Improved the State Transition model to add the .transited_via scope, the .transited_by scope, the .subject_is scope, & the .caused_by scope
+1. Improved the State Transition model to add the .``transited_via`` scope, the .transited_by scope, the .subject_is scope, & the .caused_by scope
 2. Improved the Obsolescing model to add the .obsolesced_via scope, the .obsolesced_by scope, the .obsolesced_is scope, & the .caused_by scope
 3. Improved the Acting model to add the .acted_via scope, the .acted_by scope, the .acted_is scope, & the .caused_by scope
 
