@@ -149,7 +149,7 @@
 2. Improved the Acting model, the Obsolescing model, the Searching model, & the State Transition model to include the As Caused concern
 3. As Caused shared examples
 4. RSpec shared examples manifest
-5. Improve the Acting spec, the Obsolescing spec, the Searching spec, & the State Transition spec for the As Caused concern
+5. Improved the Acting spec, the Obsolescing spec, the Searching spec, & the State Transition spec for the As Caused concern
 
 ## v1.17.9
 1. As Acted shared examples
