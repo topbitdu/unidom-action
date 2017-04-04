@@ -129,7 +129,7 @@
 4. Improved the State Transition spec for the caused_by scope
 
 ## v1.17.4
-1. Improve the Searching model for the validations on the #resource_name attribute, the #platform_name attribute, & the #platform_version attribute
+1. Improved the Searching model for the validations on the #resource_name attribute, the #platform_name attribute, & the #platform_version attribute
 2. Improve the Searching spec for the validations on the #resource_name attribute, the #platform_name attribute, & the #platform_version attribute
 
 ## v1.17.5
