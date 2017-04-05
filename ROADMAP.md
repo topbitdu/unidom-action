@@ -33,7 +33,7 @@
 
 ## v1.1
 1. Improve the State Transition model to add the ``transited_via`` scope, the ``transited_by`` scope, the ``subject_is`` scope, & the ``caused_by`` scope
-2. Improve the Obsolescing model to add the .obsolesced_via scope, the .obsolesced_by scope, the .obsolesced_is scope, & the .caused_by scope
+2. Improve the Obsolescing model to add the ``obsolesced_via`` scope, the .obsolesced_by scope, the .obsolesced_is scope, & the .caused_by scope
 3. Improve the Acting model to add the .acted_via scope, the .acted_by scope, the .acted_is scope, & the .caused_by scope
 
 ## v1.2
