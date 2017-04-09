@@ -38,7 +38,7 @@
 
 ## v1.2
 1. Improved the As State Subject concern to add the #``is_transited!`` method
-2. Improved the As Obsolesced concern to add the #is_obsolesced! method
+2. Improved the As Obsolesced concern to add the #``is_obsolesced!`` method
 
 ## v1.3
 1. Improved the As State Subject concern to add the #is_transited? method
