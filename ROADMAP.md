@@ -37,7 +37,7 @@
 3. Improve the Acting model to add the ``acted_via`` scope, the ``acted_by`` scope, the ``acted_is`` scope, & the ``caused_by`` scope
 
 ## v1.2
-1. Improve the As State Subject concern to add the #is_transited! method
+1. Improve the As State Subject concern to add the #``is_transited!`` method
 2. Improve the As Obsolesced concern to add the #is_obsolesced! method
 
 ## v1.3
