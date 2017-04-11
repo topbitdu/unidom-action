@@ -42,7 +42,7 @@
 
 ## v1.3
 1. Improve the As State Subject concern to add the #``is_transited?`` method
-2. Improve the As Obsolesced concern to add the #is_obsolesced? method
+2. Improve the As Obsolesced concern to add the #``is_obsolesced?`` method
 
 ## v1.4
 1. Improve the Acting model to add the .act! method
