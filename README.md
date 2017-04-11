@@ -265,6 +265,14 @@ class YourCaused < ApplicationRecord
 
 end
 
+# app/models/your_obsolesced.rb
+class YourObsolesced < ApplicationRecord
+
+  include Unidom::Common::Concerns::ModelExtension
+  include Unidom::Action::Concerns::AsObsolesced
+
+end
+
 # spec/support/unidom_rspec_shared_examples.rb
 require 'unidom/action/rspec_shared_examples'
 
@@ -272,6 +280,7 @@ require 'unidom/action/rspec_shared_examples'
 describe YourActed, type: :model do
 
   model_attribtues = {
+    your_attribute: 'your value'
   }
 
   it_behaves_like 'Unidom::Action::Concerns::AsActed', model_attribtues
@@ -282,6 +291,7 @@ end
 describe YourActorParty, type: :model do
 
   model_attribtues = {
+    your_attribute: 'your value'
   }
 
   it_behaves_like 'Unidom::Action::Concerns::AsActorParty', model_attribtues
@@ -292,9 +302,21 @@ end
 describe YourCaused, type: :model do
 
   model_attribtues = {
+    your_attribute: 'your value'
   }
 
   it_behaves_like 'Unidom::Action::Concerns::AsCaused', model_attribtues
+
+end
+
+# spec/models/your_obsolesced_spec.rb
+describe YourObsolesced, type: :model do
+
+  model_attribtues = {
+    your_attribute: 'your value'
+  }
+
+  it_behaves_like 'Unidom::Action::Concerns::AsObsolesced', model_attribtues
 
 end
 ```
