@@ -1,13 +1,18 @@
 module Unidom::Action::Concerns::AsObsolescerParty
 
-  extend ActiveSupport::Concern
+  extend  ActiveSupport::Concern
+  include Unidom::Common::Concerns::ArgumentValidation
 
   included do |includer|
 
     has_many :obsolesced_obsolescings, class_name: 'Unidom::Action::Obsolescing', as: :obsolescer_party
 
     def obsolesce!(it, obsolescence_code: 'OBSL', due_to: nil, via: nil, at: Time.now)
+
+      assert_present! :it, it
+
       obsolesced_obsolescings.create! obsolesced: it, obsolescence_code: 'OBSL', obsolescer_visitor: via, reason: due_to, opened_at: at
+
     end
 
     def obsolesce?(it, obsolescence_code: 'OBSL', due_to: nil, via: nil, at: Time.now)
