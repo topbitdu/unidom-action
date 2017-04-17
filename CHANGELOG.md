@@ -162,7 +162,7 @@
 
 ## v1.17.11
 1. As Obsolescer Party shared examples
-2. Improve the RSpec shared examples manifest to require the As Obsolescer Party shared examples
+2. Improved the RSpec shared examples manifest to require the As Obsolescer Party shared examples
 
 ## v1.17.12
 1. As Searcher Party shared examples
