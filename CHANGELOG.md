@@ -158,7 +158,7 @@
 ## v1.17.10
 1. Improved the As Obsolesced concern for the argument validations of the #is_obsolesced! method
 2. As Obsolesced shared examples
-3. Improve the RSpec shared examples manifest to require the As Obsolesced shared examples
+3. Improved the RSpec shared examples manifest to require the As Obsolesced shared examples
 
 ## v1.17.11
 1. As Obsolescer Party shared examples
