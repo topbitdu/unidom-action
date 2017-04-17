@@ -281,6 +281,14 @@ class YourObsolescerParty < ApplicationRecord
 
 end
 
+# app/models/your_searcher_party.rb
+class YourSearcherParty < ApplicationRecord
+
+  include Unidom::Common::Concerns::ModelExtension
+  include Unidom::Action::Concerns::AsSearcherParty
+
+end
+
 # spec/support/unidom_rspec_shared_examples.rb
 require 'unidom/action/rspec_shared_examples'
 
@@ -336,6 +344,17 @@ describe YourObsolescerParty, type: :model do
   }
 
   it_behaves_like 'Unidom::Action::Concerns::AsObsolescerParty', model_attribtues
+
+end
+
+# spec/models/your_searcher_party_spec.rb
+describe YourSearcherParty, type: :model do
+
+  model_attribtues = {
+    your_attribute: 'your value'
+  }
+
+  it_behaves_like 'Unidom::Action::Concerns::AsSearcherParty', model_attribtues
 
 end
 ```
