@@ -46,7 +46,7 @@
 
 ## v1.4
 1. Improve the Acting model to add the .``act!`` method
-2. Improve the As Acted concern to add the #is_acted! method
+2. Improve the As Acted concern to add the #``is_acted!`` method
 
 ## v1.5
 1. Improve the As Acted concern to add the #is_acted? method
