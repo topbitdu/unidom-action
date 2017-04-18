@@ -166,4 +166,4 @@
 
 ## v1.17.12
 1. As Searcher Party shared examples
-2. Improve the RSpec shared examples manifest to require the As Searcher Party shared examples
+2. Improved the RSpec shared examples manifest to require the As Searcher Party shared examples
