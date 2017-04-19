@@ -1,13 +1,18 @@
 module Unidom::Action::Concerns::AsStateSubject
 
-  extend ActiveSupport::Concern
+  extend  ActiveSupport::Concern
+  include Unidom::Common::Concerns::ArgumentValidation
 
   included do |includer|
 
     has_many :state_transitions, class_name: 'Unidom::Action::StateTransition', as: :subject
 
     def is_transited!(from: nil, thru: nil, due_to: nil, via: nil, by: nil, at: Time.now)
+
+      assert_present! :from, from
+
       state_transitions.create! from_state: from, thru_state: thru, transitor_visitor: via, transitor_party: by, reason: due_to, opened_at: at
+
     end
 
     def is_transited?(from: nil, thru: nil, due_to: nil, via: nil, by: nil, at: Time.now)
