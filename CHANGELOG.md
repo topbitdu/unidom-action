@@ -63,7 +63,7 @@
 1. Improved the As Actor Party concern to add the #``act!`` method
 
 ## v1.9
-1. Improved the As Actor Party concern to add the #act? method
+1. Improved the As Actor Party concern to add the #``act?`` method
 
 ## v1.9.1
 1. Improved the Ruby Gem Specification to depend on [unidom-common](https://github.com/topbitdu/unidom-common) v1.6
