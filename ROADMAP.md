@@ -92,7 +92,7 @@
 1. As Searcher Party concern
 
 ## v1.15
-1. Improve the As Searcher Party concern to add the #search! method
+1. Improve the As Searcher Party concern to add the #``search!`` method
 
 ## v1.16
 1. Improve the As Searcher Party concern to add the #search? method
