@@ -60,7 +60,7 @@
 2. Improved the As Obsolescer Party concern to add the #``obsolesce?`` method
 
 ## v1.8
-1. Improved the As Actor Party concern to add the #act! method
+1. Improved the As Actor Party concern to add the #``act!`` method
 
 ## v1.9
 1. Improved the As Actor Party concern to add the #act? method
