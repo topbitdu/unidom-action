@@ -123,7 +123,7 @@
 4. Improved the State Transition spec for the ``belongs_to :reason, class_name: 'Unidom::Action::Reason'`` macro
 
 ## v1.17.3
-1. Improved the Acting spec for the caused_by scope
+1. Improved the Acting spec for the ``caused_by`` scope
 2. Improved the Obsolescing spec for the caused_by scope
 3. Improved the Searching spec for the caused_by scope
 4. Improved the State Transition spec for the caused_by scope
