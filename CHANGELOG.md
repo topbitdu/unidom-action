@@ -56,7 +56,7 @@
 2. Improved the As Obsolescer Party concern to add the #``obsolesce!`` method
 
 ## v1.7
-1. Improved the As State Transitor Party concern to add the #transit? method
+1. Improved the As State Transitor Party concern to add the #``transit?`` method
 2. Improved the As Obsolescer Party concern to add the #obsolesce? method
 
 ## v1.8
