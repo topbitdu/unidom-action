@@ -289,11 +289,19 @@ class YourSearcherParty < ApplicationRecord
 
 end
 
-# app/models/your_as_state_subject.rb
+# app/models/your_state_subject.rb
 class YourStateSubject < ApplicationRecord
 
   include Unidom::Common::Concerns::ModelExtension
   include Unidom::Action::Concerns::AsStateSubject
+
+end
+
+# app/models/your_state_transitor_party.rb
+class YourStateTransitorParty < ApplicationRecord
+
+  include Unidom::Common::Concerns::ModelExtension
+  include Unidom::Action::Concerns::AsStateTransitorParty
 
 end
 
@@ -365,7 +373,7 @@ describe YourSearcherParty, type: :model do
   it_behaves_like 'Unidom::Action::Concerns::AsSearcherParty', model_attribtues
 
 end
-```
+
 # spec/models/your_state_subject_spec.rb
 describe YourStateSubject, type: :model do
 
@@ -374,6 +382,17 @@ describe YourStateSubject, type: :model do
   }
 
   it_behaves_like 'Unidom::Action::Concerns::AsStateSubject', model_attribtues
+
+end
+
+# spec/models/your_state_transitor_party_spec.rb
+describe YourAsStateTransitorParty, type: :model do
+
+  model_attribtues = {
+    your_attribute: 'your value'
+  }
+
+  it_behaves_like 'Unidom::Action::Concerns::YourAsStateTransitorParty', model_attribtues
 
 end
 ```
