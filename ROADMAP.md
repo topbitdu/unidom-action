@@ -126,7 +126,7 @@
 1. Improve the Acting spec for the ``caused_by`` scope
 2. Improve the Obsolescing spec for the ``caused_by`` scope
 3. Improve the Searching spec for the ``caused_by`` scope
-4. Improve the State Transition spec for the caused_by scope
+4. Improve the State Transition spec for the ``caused_by`` scope
 
 ## v1.17.4
 1. Improve the Searching model for the validations on the #resource_name attribute, the #platform_name attribute, & the #platform_version attribute
