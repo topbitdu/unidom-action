@@ -311,11 +311,18 @@ require 'unidom/action/rspec_shared_examples'
 # spec/models/your_acted_spec.rb
 describe YourActed, type: :model do
 
-  model_attribtues = {
-    your_attribute: 'your value'
-  }
+  context do
 
-  it_behaves_like 'Unidom::Action::Concerns::AsActed', model_attribtues
+    model_attribtues = {
+      your_attribute: 'your value'
+    }
+
+    actor_party   = Unidom::Party::Person.create! name: 'Tim'
+    actor_visitor = Unidom::Visitor::User.create!
+
+    it_behaves_like 'Unidom::Action::Concerns::AsActed', model_attributes, actor_party, actor_visitor
+
+  end
 
 end
 
