@@ -1,13 +1,21 @@
 module Unidom::Action::Concerns::AsActed
 
-  extend ActiveSupport::Concern
+  extend  ActiveSupport::Concern
+  include Unidom::Common::Concerns::ArgumentValidation
 
   included do |includer|
 
     has_many :actings, class_name: 'Unidom::Action::Acting', as: :acted
 
     def is_acted!(from: nil, thru: nil, due_to: nil, by: nil, via: nil, at: Time.now, action_code: 'C')
+
+      assert_present! :by,  by
+      assert_present! :via, via
+      assert_present! :at,  at
+      assert_present! :action_code, action_code
+
       actings.create! from_value: from, thru_value: thru, actor_visitor: via, actor_party: by, acted: self, reason: due_to, action_code: action_code, opened_at: at
+
     end
 
     def is_acted?(due_to: nil, by: nil, via: nil, at: Time.now, action_code: 'C')
