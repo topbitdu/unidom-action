@@ -344,11 +344,15 @@ end
 # spec/models/your_caused_spec.rb
 describe YourCaused, type: :model do
 
-  model_attribtues = {
-    your_attribute: 'your value'
-  }
+  context do
 
-  it_behaves_like 'Unidom::Action::Concerns::AsCaused', model_attribtues
+    model_attribtues = {
+      your_attribute: 'your value'
+    }
+
+    it_behaves_like 'Unidom::Action::Concerns::AsCaused', model_attribtues
+
+  end
 
 end
 
