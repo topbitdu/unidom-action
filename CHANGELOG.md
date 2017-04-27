@@ -130,7 +130,7 @@
 
 ## v1.17.4
 1. Improved the Searching model for the validations on the #``resource_name`` attribute, the #``platform_name`` attribute, & the #``platform_version`` attribute
-2. Improved the Searching spec for the validations on the #``resource_name`` attribute, the #platform_name attribute, & the #platform_version attribute
+2. Improved the Searching spec for the validations on the #``resource_name`` attribute, the #``platform_name`` attribute, & the #platform_version attribute
 
 ## v1.17.5
 1. Improved the Searching model for the validations on the #found_count attribute, the #shown_count attribute, the #per_page attribute, the #total_pages attribute, & the #current_page attribute
