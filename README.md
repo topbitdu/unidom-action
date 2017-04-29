@@ -389,11 +389,15 @@ end
 # spec/models/your_searcher_party_spec.rb
 describe YourSearcherParty, type: :model do
 
-  model_attribtues = {
-    your_attribute: 'your value'
-  }
+  context do
 
-  it_behaves_like 'Unidom::Action::Concerns::AsSearcherParty', model_attribtues
+    model_attribtues = {
+      your_attribute: 'your value'
+    }
+
+    it_behaves_like 'Unidom::Action::Concerns::AsSearcherParty', model_attribtues
+
+  end
 
 end
 
