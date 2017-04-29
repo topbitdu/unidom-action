@@ -404,11 +404,15 @@ end
 # spec/models/your_state_subject_spec.rb
 describe YourStateSubject, type: :model do
 
-  model_attribtues = {
-    your_attribute: 'your value'
-  }
+  context do
 
-  it_behaves_like 'Unidom::Action::Concerns::AsStateSubject', model_attribtues
+    model_attribtues = {
+      your_attribute: 'your value'
+    }
+
+    it_behaves_like 'Unidom::Action::Concerns::AsStateSubject', model_attribtues
+
+  end
 
 end
 
