@@ -374,11 +374,15 @@ end
 # spec/models/your_obsolescer_party_spec.rb
 describe YourObsolescerParty, type: :model do
 
-  model_attribtues = {
-    your_attribute: 'your value'
-  }
+  context do
 
-  it_behaves_like 'Unidom::Action::Concerns::AsObsolescerParty', model_attribtues
+    model_attribtues = {
+      your_attribute: 'your value'
+    }
+
+    it_behaves_like 'Unidom::Action::Concerns::AsObsolescerParty', model_attribtues
+
+  end
 
 end
 
