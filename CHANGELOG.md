@@ -177,5 +177,5 @@
 2. Improved the RSpec shared examples manifest to require the As State Transitor Party shared examples
 
 ## v1.17.15
-1. Improve the As Acted concern for the argument validations of the #is_acted! method
+1. Improved the As Acted concern for the argument validations of the #is_acted! method
 2. Improve the As Acted shared examples for the argument validations of the #is_acted! method
