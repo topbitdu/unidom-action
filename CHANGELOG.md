@@ -138,7 +138,7 @@
 
 ## v1.17.6
 1. Improved the Searching spec for the validations on the #``found_count`` attribute, the #``shown_count`` attribute, the #``per_page`` attribute, the #``total_pages`` attribute, & the #``current_page`` attribute
-2. Improved the Reason spec for the validations on the #name attribute
+2. Improved the Reason spec for the validations on the #``name`` attribute
 
 ## v1.17.7
 1. Improved the Searching model for the validations on the #resource_name attribute, & the #platform_name attribute
