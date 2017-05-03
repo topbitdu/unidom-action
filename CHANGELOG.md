@@ -141,7 +141,7 @@
 2. Improved the Reason spec for the validations on the #``name`` attribute
 
 ## v1.17.7
-1. Improved the Searching model for the validations on the #``resource_name`` attribute, & the #platform_name attribute
+1. Improved the Searching model for the validations on the #``resource_name`` attribute, & the #``platform_name`` attribute
 2. Improved the Searching spec for the validations on the #resource_name attribute, & the #platform_name attribute
 
 ## v1.17.8
