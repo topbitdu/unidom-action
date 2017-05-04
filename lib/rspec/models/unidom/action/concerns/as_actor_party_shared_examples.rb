@@ -1,4 +1,4 @@
-shared_examples 'Unidom::Action::Concerns::AsActorParty' do |model_attributes|
+shared_examples 'Unidom::Action::Concerns::AsActorParty' do |model_attributes, acted, actor_visitor|
 
   context do
 
@@ -19,6 +19,11 @@ shared_examples 'Unidom::Action::Concerns::AsActorParty' do |model_attributes|
     }
 
     it_behaves_like 'has_many', model_attributes, :acted_actings, Unidom::Action::Acting, [ acting_1_attributes, acting_2_attributes ]
+
+    model = described_class.create! model_attributes
+    it_behaves_like 'assert_present!', model, :act!, [ { on: acted, from: nil,                  thru: nil,                  due_to: nil, via: actor_visitor, at: Time.now, action_code: 'C' } ], [ :on, :via, :at, :action_code ]
+    it_behaves_like 'assert_present!', model, :act!, [ { on: acted, from: {},                   thru: {},                   due_to: nil, via: actor_visitor, at: Time.now, action_code: 'C' } ], [ :on, :via, :at, :action_code ]
+    it_behaves_like 'assert_present!', model, :act!, [ { on: acted, from: { key_1: 'value_1' }, thru: { key_1: 'value_2' }, due_to: nil, via: actor_visitor, at: Time.now, action_code: 'C' } ], [ :on, :via, :at, :action_code ]
 
   end
 
