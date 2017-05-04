@@ -335,7 +335,13 @@ describe YourActorParty, type: :model do
       your_attribute: 'your value'
     }
 
-    it_behaves_like 'Unidom::Action::Concerns::AsActorParty', model_attribtues
+    acted_attributes = {}
+    acted = Unidom::Visitor::User.create! acted_attributes
+
+    actor_visitor_attributes = {}
+    actor_visitor = Unidom::Visitor::User.create! actor_visitor_attributes
+
+    it_behaves_like 'Unidom::Action::Concerns::AsActorParty', model_attributes, acted, actor_visitor
 
   end
 
