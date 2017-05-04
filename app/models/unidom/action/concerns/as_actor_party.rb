@@ -1,13 +1,21 @@
 module Unidom::Action::Concerns::AsActorParty
 
-  extend ActiveSupport::Concern
+  extend  ActiveSupport::Concern
+  include Unidom::Common::Concerns::ArgumentValidation
 
   included do |includer|
 
     has_many :acted_actings, class_name: 'Unidom::Action::Acting', as: :actor_party
 
     def act!(on: nil, from: nil, thru: nil, due_to: nil, via: nil, at: Time.now, action_code: 'C')
+
+      assert_present! :on,          on
+      assert_present! :via,         via
+      assert_present! :at,          at
+      assert_present! :action_code, action_code
+
       acted_actings.create! acted: on, from_value: from, thru_value: thru, reason: due_to, actor_visitor: via, opened_at: at, action_code: action_code
+
     end
 
     def act?(on: nil, due_to: nil, via: nil, at: Time.now, action_code: 'C')
