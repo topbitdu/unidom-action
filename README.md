@@ -371,7 +371,15 @@ describe YourObsolesced, type: :model do
       your_attribute: 'your value'
     }
 
-    it_behaves_like 'Unidom::Action::Concerns::AsObsolesced', model_attribtues
+    obsolescer_party_attributes = {
+      name: 'Tim'
+    }
+    obsolescer_party = Unidom::Party::Person.create! obsolescer_party_attributes
+
+    obsolescer_visitor_attributes = {}
+    obsolescer_visitor = Unidom::Visitor::User.create! obsolescer_visitor_attributes
+
+    it_behaves_like 'Unidom::Action::Concerns::AsObsolesced', model_attributes, obsolescer_party, obsolescer_visitor
 
   end
 

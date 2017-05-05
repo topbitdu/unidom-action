@@ -183,3 +183,7 @@
 ## v1.17.16
 1. Improve the As Actor Party concern for the argument validations of the #act! method
 2. Improve the As Actor Party shared examples for the argument validations of the #act! method
+
+## v1.17.17
+1. Improve the As Obsolesced concern for the argument validations of the #is_acted! method
+2. Improve the As Obsolesced shared examples for the argument validations of the #is_acted! method
