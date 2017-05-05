@@ -11,6 +11,8 @@ module Unidom::Action::Concerns::AsObsolesced
 
       assert_present! :obsolescence_code, obsolescence_code
       assert_present! :via,               via
+      assert_present! :by,                by
+      assert_present! :at,                at
 
       obsolescings.create! obsolescence_code: 'OBSL', obsolescer_visitor: via, obsolescer_party: by, reason: due_to, opened_at: at
 
