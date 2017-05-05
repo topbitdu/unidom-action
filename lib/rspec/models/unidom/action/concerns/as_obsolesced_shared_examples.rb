@@ -1,4 +1,4 @@
-shared_examples 'Unidom::Action::Concerns::AsObsolesced' do |model_attributes|
+shared_examples 'Unidom::Action::Concerns::AsObsolesced' do |model_attributes, obsolescer_party, obsolescer_visitor|
 
   context do
 
@@ -23,6 +23,9 @@ shared_examples 'Unidom::Action::Concerns::AsObsolesced' do |model_attributes|
     }
 
     it_behaves_like 'has_many', model_attributes, :obsolescings, Unidom::Action::Obsolescing, [ obsolescing_1_attributes, obsolescing_2_attributes ]
+
+    model = described_class.create! model_attributes
+    it_behaves_like 'assert_present!', model, :is_obsolesced!, [ { obsolescence_code: 'OBSL', due_to: nil, by: obsolescer_party, via: obsolescer_visitor, at: Time.now } ], [ :by, :via, :at, :obsolescence_code ]
 
   end
 
