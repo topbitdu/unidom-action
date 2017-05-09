@@ -187,3 +187,7 @@
 ## v1.17.17
 1. Improve the As Obsolesced concern for the argument validations of the #is_acted! method
 2. Improve the As Obsolesced shared examples for the argument validations of the #is_acted! method
+
+## v1.17.18
+1. Improve the Ruby Gem Specification to depend on unidom-common v1.10
+2. Improve the Reason migration, the Acting migration, the State Transition migration, the Obsolescing migration, & the Searching migration for the #opened_at column, & the #closed_at column
